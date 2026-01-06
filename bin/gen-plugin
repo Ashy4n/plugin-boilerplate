@@ -1,0 +1,19 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . '/../vendor/autoload.php';
+
+
+use Ashyan\PluginBoilerplate\Command\CreatePluginCommand;
+use Ashyan\PluginBoilerplate\Service\FileGeneratorService;
+use Ashyan\PluginBoilerplate\Service\ProcessRunnerService;
+use Symfony\Component\Console\Application;
+
+$application = new Application('Company X WP Generator', '1.0.0');
+
+// Dependency Injection
+$fileGenerator = new FileGeneratorService(__DIR__ . '/../stubs');
+$processRunner = new ProcessRunnerService();
+
+$application->add(new CreatePluginCommand($fileGenerator, $processRunner));
+$application->run();

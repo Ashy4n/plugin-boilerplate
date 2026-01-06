@@ -1,0 +1,12 @@
+{
+    "name": "ashyan/plugin-boilerplate",
+    "autoload": {
+        "psr-4": {
+            "Ashyan\\PluginBoilerplate\\": "src/"
+        }
+    },
+    "require": {
+        "symfony/console": "^7.4",
+        "symfony/process": "^7.4"
+    }
+}

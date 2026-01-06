@@ -1,0 +1,16 @@
+<?php
+/**
+ * Fired when the plugin is uninstalled.
+ */
+
+if (!defined('WP_UNINSTALL_PLUGIN')) {
+    exit;
+}
+
+/**
+ * Cleanup Logic
+ *
+ * 1. Delete options from wp_options table
+ * 2. Delete custom database tables (if any)
+ * 3. Clear scheduled hooks (CRON)
+ */

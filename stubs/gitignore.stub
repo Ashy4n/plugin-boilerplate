@@ -1,0 +1,21 @@
+# Composer and Dependencies
+vendor/
+composer.lock
+
+# IDEs
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Project specific
+phpstan.neon.cache
+phpunit.result.cache
+node_modules/
+dist/

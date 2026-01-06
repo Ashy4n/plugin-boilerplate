@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<ruleset name="WordPress Plugin Coding Standards">
+    <description>Project-specific rules for {{plugin_name}}</description>
+
+    <!-- Targets -->
+    <file>src/</file>
+    <file>{{slug}}.php</file>
+    <exclude-pattern>/vendor/*</exclude-pattern>
+    <exclude-pattern>/tests/*</exclude-pattern>
+
+    <!-- Config -->
+    <arg value="ps"/>
+    <arg name="colors"/>
+    <arg name="extensions" value="php"/>
+
+    <!-- Rule sets -->
+    <rule ref="WordPress-Core"/>
+    <rule ref="WordPress-Docs"/>
+    <rule ref="WordPress-Extra"/>
+
+    <!-- Namespace prefix check -->
+    <rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+        <properties>
+            <property name="prefixes" type="array" value="{{slug}},{{namespace_escaped}}"/>
+        </properties>
+    </rule>
+</ruleset>

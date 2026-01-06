@@ -1,0 +1,51 @@
+<?php
+/**
+ * Plugin Name: {{plugin_name}}
+ * Description: {{description}}
+ * Version:     1.0.0
+ * Author:      {{author}}
+ * Text Domain: {{slug}}
+ * Requires PHP: {{php_version}}
+ */
+
+namespace {{namespace}};
+
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+/**
+ * Main Plugin Class
+ * Implements Singleton pattern to ensure only one instance of the plugin is running.
+ */
+final class Plugin {
+    private static ?Plugin $instance = null;
+
+    public static function getInstance(): Plugin {
+        if (self::$instance === null) {
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
+
+    private function __construct() {
+        $this->init();
+    }
+
+    private function init(): void {
+        // Initialize hooks, registers, etc.
+        add_action('init', [$this, 'on_wp_init']);
+    }
+
+    public function on_wp_init(): void {
+        // Example hook
+    }
+
+    private function __clone() {}
+    public function __wakeup() {
+        throw new \Exception("Cannot unserialize a singleton.");
+    }
+}
+
+// Launch the plugin
+Plugin::getInstance();
