@@ -23,8 +23,8 @@ class FileGeneratorService {
         }
 
         $dir = dirname($destination);
-        if (!is_dir($dir)) {
-            mkdir($dir, 0755, true);
+        if ( ! is_dir( $dir ) && ! mkdir( $dir, 0755, true ) && ! is_dir( $dir ) ) {
+	        throw new \RuntimeException( sprintf( 'Directory "%s" was not created', $dir ) );
         }
 
         file_put_contents($destination, $content);

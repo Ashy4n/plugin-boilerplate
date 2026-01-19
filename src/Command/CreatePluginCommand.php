@@ -39,7 +39,6 @@ class CreatePluginCommand extends Command {
 
         $io->section('Generating file structure...');
 
-        // Reszta logiki generowania (jak w poprzednim kodzie)...
         $this->generateFiles($targetDir, $data);
 
         $io->section('Initializing Environment...');
