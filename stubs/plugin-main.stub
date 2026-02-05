@@ -2,10 +2,12 @@
 /**
  * Plugin Name: {{plugin_name}}
  * Description: {{description}}
+ * Plugin URI: {{plugin_uri}}
  * Version:     1.0.0
  * Author:      {{author}}
- * Text Domain: {{slug}}
- * Requires PHP: {{php_version}}
+ * Author URI: {{author_url}}
+ * Text Domain: {{text_domain}}
+ * Requires PHP: {{min_php}}
  */
 
 namespace {{namespace}};

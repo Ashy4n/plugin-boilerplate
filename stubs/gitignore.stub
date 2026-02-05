@@ -1,6 +1,6 @@
 # Composer and Dependencies
 vendor/
-composer.lock
+vendor_prefixed/
 
 # IDEs
 .idea/

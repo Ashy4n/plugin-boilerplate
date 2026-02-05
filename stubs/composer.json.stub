@@ -1,15 +1,18 @@
 {
     "name": "{{vendor_slug}}/{{slug}}",
     "description": "{{description}}",
+    "homepage": "{{plugin_uri}}",
     "type": "wordpress-plugin",
     "license": "proprietary",
     "authors": [
         {
-            "name": "{{author}}"
+            "name": "{{author}}",
+            "email": "{{email}}",
+            "homepage": "{{author_url}}"
         }
     ],
     "require": {
-        "php": ">={{php_version}}"
+        "php": ">={{min_php}}"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5",
